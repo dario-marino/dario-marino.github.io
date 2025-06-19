@@ -1,77 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Dario Marino — CV</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dario Marino</title>
   <style>
-    body { font-family:'Libre Franklin', sans-serif; margin:0; padding-top:60px; line-height:1.6;}
-    header { position:fixed; top:0; width:100%; background:#fff; border-bottom:1px solid #eee; height:60px; display:flex; align-items:center; justify-content:center; z-index:100;}
-    nav a { margin:0 15px; color:#333; text-decoration:none; font-weight:400;}
-    .container { max-width:700px; margin:0 auto; padding:20px;}
-    section { margin-bottom:40px;}
-    section h2 { border-bottom:2px solid #ddd; padding-bottom:5px; margin-bottom:15px;}
-    ul { list-style:none; padding-left:0;}
-    ul li { margin-bottom:8px;}
-    a.contact { color:#0066cc; text-decoration:none; }
+    /* Base resets */
+    body, h1, h2, p, ul { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      color: #111;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 1rem;
+    }
+    .header a {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    header img.profile {
+      max-width: 160px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    section {
+      max-width: 760px;
+      margin-bottom: 2rem;
+    }
+    section h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    ul { list-style: disc inside; }
+
+    .dark body {
+      background-color: #111;
+      color: #eee;
+    }
+    .dark a { color: #9cf; }
   </style>
 </head>
-<body>
+<body class="light">
+  <div class="header">
+    <a href="https://www.linkedin.com/in/dario-f-marino" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn" />
+      LinkedIn
+    </a>
+    <a href="https://github.com/dario-marino" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/24/733/733553.png" alt="GitHub" />
+      GitHub
+    </a>
+    <a href="https://x.com/EconDarioMarino" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="X" />
+      X
+    </a>
+  </div>
+
   <header>
-    <nav>
-      <a href="#education">Education</a>
-      <a href="#research">Research</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <img class="profile"
+         src="New_Photo.jpg"
+         alt="Dario Marino" />
+    <h1>Dario Marino</h1>
+    <p>Graduate Student, MACSS‑Econ · University of Chicago</p>
   </header>
 
-  <div class="container">
-    <section id="education">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>UChicago</strong>, MACSS‑Econ, Aug 2024 – Jun 2026, GPA 3.7</li>
-        <li><strong>Bologna</strong>, BSc Mathematics, Sep 2023 – Jul 2024, …</li>
-        <!-- Continue each item -->
-      </ul>
-    </section>
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I am Dario Marino, a Graduate Student in the MACSS‑Econ program at
+      the University of Chicago. My research focuses on Innovation, using
+      NLP methods and Applied Microeconometric techniques. Theoretical
+      frameworks I rely on include Industrial Organization and Network
+      Economics.
+    </p>
+  </section>
 
-    <section id="research">
-      <h2>Research Experience</h2>
-      <ul>
-        <li><strong>Knowledge Lab, UChicago</strong> (Jun 2026 – Oct 2026): …</li>
-        <!-- continue -->
-      </ul>
-    </section>
+  <section id="research">
+    <h2>Research</h2>
+    <p><strong>WORK IN PROGRESS</strong></p>
+    <ul>
+      <li>
+        Dario Marino and Nicola Rossi (Università Tor Vergata), “La cultura economica,”
+        in <em>Un miracolo non fa il santo. 2. La cultura degli italiani</em>, edited
+        by Nicola Rossi, IBL Libri, 2025.
+      </li>
+    </ul>
+  </section>
 
-    <section id="teaching">
-      <h2>Teaching Experience</h2>
-      <ul>
-        <li><strong>UChicago TA</strong>, Economic Analysis of Law (Aug 2024 – Jan 2025)</li>
-        <!-- continue -->
-      </ul>
-    </section>
+  <footer>
+    <button onclick="toggleTheme()">
+      Toggle Light / Dark Theme
+    </button>
+  </footer>
 
-    <section id="experience">
-      <h2>Organizational Experience & Awards</h2>
-      <ul>
-        <li>Think‑tank content creator…</li>
-        <li><strong>Mercatus Fellowship</strong> (2024‑2026)</li>
-        <!-- continue -->
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <ul>
-        <li><a class="contact" href="mailto:dariomarino@uchicago.edu">dariomarino@uchicago.edu</a></li>
-        <li><a class="contact" href="https://www.linkedin.com/in/dario-f-marino/">LinkedIn</a></li>
-        <li><a class="contact" href="https://github.com/dario-marino">GitHub</a></li>
-        <li>Chicago, IL | +1 773 851 6143</li>
-      </ul>
-    </section>
-  </div>
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle('dark');
+      body.classList.toggle('light');
+    }
+  </script>
 </body>
 </html>
