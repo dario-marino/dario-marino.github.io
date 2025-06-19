@@ -1,84 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Dario Marino</title>
+  <!-- Dark mode toggle element -->
+  <script type="module" src="https://unpkg.com/dark-mode-toggle"></script> <!-- adds <dark-mode-toggle> component :contentReference[oaicite:1]{index=1} -->
   <style>
-    /* Base resets */
-    body, h1, h2, p, ul { margin: 0; padding: 0; }
+    :root {
+      --bg-light: #ffffff;
+      --text-light: #111111;
+      --bg-dark:  #111111;
+      --text-dark: #eeeeee;
+    }
+    html[data-theme="light"] {
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+    html[data-theme="dark"] {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 2rem 1rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       line-height: 1.6;
-      min-height: 100vh;
-      color: #111;
-      background-color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem 1rem;
     }
     a { color: inherit; text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    .header {
+    .topbar {
+      width: 100%;
+      max-width: 760px;
       display: flex;
-      gap: 16px;
-      margin-bottom: 1rem;
-    }
-    .header a {
-      display: inline-flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 4px;
+      margin-bottom: 2rem;
     }
-
-    header img.profile {
-      max-width: 160px;
+    .links a { margin-left: 1rem; display: inline-flex; align-items: center; }
+    .links img { width: 24px; height: 24px; margin-right: 0.25rem; }
+    .profile {
+      width: 160px;
       border-radius: 50%;
       margin-bottom: 1rem;
     }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    section {
-      max-width: 760px;
-      margin-bottom: 2rem;
-    }
-    section h2 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-    ul { list-style: disc inside; }
-
-    .dark body {
-      background-color: #111;
-      color: #eee;
-    }
-    .dark a { color: #9cf; }
+    section { max-width: 760px; margin-bottom: 2rem; }
+    h1 { margin-bottom: 0.5rem; font-size: 2rem; }
+    h2 { margin-bottom: 0.5rem; font-size: 1.25rem; }
+    ul { padding-left: 1.2em; }
   </style>
 </head>
-<body class="light">
-  <div class="header">
-    <a href="https://www.linkedin.com/in/dario-f-marino" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn" />
-      LinkedIn
-    </a>
-    <a href="https://github.com/dario-marino" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/24/733/733553.png" alt="GitHub" />
-      GitHub
-    </a>
-    <a href="https://x.com/EconDarioMarino" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="X" />
-      Twitter
-    </a>
+<body>
+  <div class="topbar">
+    <dark-mode-toggle></dark-mode-toggle>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/dario-f-marino" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn">LinkedIn
+      </a>
+      <a href="https://github.com/dario-marino" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/24/733/733553.png" alt="GitHub">GitHub
+      </a>
+      <a href="https://x.com/EconDarioMarino" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="Twitter">Twitter
+      </a>
+    </div>
   </div>
 
   <header>
-    <img class="profile"
-         src="New_Photo.jpg"
-         alt="Dario Marino" />
+    <img class="profile" src="New_Photo.jpg" alt="Dario Marino">
     <h1>Dario Marino</h1>
     <p>Graduate Student, MACSS‑Econ · University of Chicago</p>
   </header>
@@ -86,38 +78,24 @@
   <section id="about">
     <h2>About</h2>
     <p>
-      I am Dario Marino, a Graduate Student in the MACSS‑Econ program at
-      the University of Chicago. My research focuses on Innovation, using
-      NLP methods and Applied Microeconometric techniques. Theoretical
-      frameworks I rely on include Industrial Organization and Network
-      Economics.
+      I am Dario Marino, a Graduate Student in the MACSS‑Econ program at the University of Chicago. My research focuses on Innovation, using NLP methods and Applied Microeconometric techniques. Theoretical frameworks I rely on include Industrial Organization and Network Economics.
     </p>
   </section>
 
-  <section id="research">
+  <section id="research" style="display:none">
     <h2>Research</h2>
     <p><strong>WORK IN PROGRESS</strong></p>
     <ul>
       <li>
-        Dario Marino and Nicola Rossi (Università Tor Vergata), “La cultura economica,”
-        in <em>Un miracolo non fa il santo. 2. La cultura degli italiani</em>, edited
-        by Nicola Rossi, IBL Libri, 2025.
+        Dario Marino and Nicola Rossi (Università Tor Vergata), “La cultura economica,” in <em>Un miracolo non fa il santo. 2. La cultura degli italiani</em>, edited by Nicola Rossi, IBL Libri, 2025.
       </li>
     </ul>
   </section>
 
   <footer>
-    <button onclick="toggleTheme()">
-      Toggle Light / Dark Theme
+    <button onclick="document.getElementById('research').style.display = 'block'; this.style.display = 'none'">
+      Show research →
     </button>
   </footer>
-
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      body.classList.toggle('dark');
-      body.classList.toggle('light');
-    }
-  </script>
 </body>
 </html>
